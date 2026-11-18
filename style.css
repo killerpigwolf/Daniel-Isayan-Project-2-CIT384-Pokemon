@@ -266,6 +266,27 @@ h1 span {
   font-size: .75rem;
 }
 
+.cry-player {
+  display: none;
+  margin-top: 12px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #241a16;
+}
+
+.cry-player.is-visible {
+  display: block;
+}
+
+.cry-video {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  margin: 0 auto;
+}
+
 .action-button {
   min-height: 75px;
   padding: 9px 5px;

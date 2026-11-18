@@ -34,50 +34,10 @@ $(function() {
   }
 
   function clickedCryButton() {
-    var AudioContextConstructor = window.AudioContext || window.webkitAudioContext;
-
-    if (!AudioContextConstructor) {
-      announce("This browser does not support the synthesized cry.", true);
-      return;
-    }
-
-    var audioContext = new AudioContextConstructor();
-    var masterGain = audioContext.createGain();
-    var filter = audioContext.createBiquadFilter();
-    var now = audioContext.currentTime;
-
-    filter.type = "lowpass";
-    filter.frequency.setValueAtTime(900, now);
-    masterGain.gain.setValueAtTime(0.0001, now);
-    masterGain.gain.exponentialRampToValueAtTime(0.18, now + 0.04);
-    masterGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.58);
-    filter.connect(masterGain);
-    masterGain.connect(audioContext.destination);
-
-    var growl = audioContext.createOscillator();
-    var overtone = audioContext.createOscillator();
-    var overtoneGain = audioContext.createGain();
-
-    growl.type = "sawtooth";
-    growl.frequency.setValueAtTime(250, now);
-    growl.frequency.exponentialRampToValueAtTime(95, now + 0.55);
-    overtone.type = "square";
-    overtone.frequency.setValueAtTime(510, now);
-    overtone.frequency.exponentialRampToValueAtTime(190, now + 0.55);
-    overtoneGain.gain.setValueAtTime(0.18, now);
-
-    growl.connect(filter);
-    overtone.connect(overtoneGain);
-    overtoneGain.connect(filter);
-    growl.onended = function() {
-      audioContext.close();
-    };
-    growl.start(now);
-    overtone.start(now);
-    growl.stop(now + 0.6);
-    overtone.stop(now + 0.6);
-
-    announce("Primeape lets out a mighty growl!");
+    var video = $('.cry-video');
+    video.attr('src', 'https://www.youtube-nocookie.com/embed/-1bcp90O614?autoplay=1&playsinline=1&rel=0');
+    $('.cry-player').addClass('is-visible');
+    announce("Playing Primeape's cry from YouTube.");
   }
 
   function clickedNicknameForm(event) {
