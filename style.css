@@ -261,11 +261,6 @@ h1 span {
   transform: translateY(-1px);
 }
 
-.sound-note {
-  color: #817264;
-  font-size: .75rem;
-}
-
 .cry-player {
   display: none;
   margin-top: 12px;
