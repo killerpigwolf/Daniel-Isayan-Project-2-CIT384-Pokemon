@@ -34,10 +34,18 @@ $(function() {
   }
 
   function clickedCryButton() {
-    var video = $('.cry-video');
-    video.attr('src', 'https://www.youtube-nocookie.com/embed/-1bcp90O614?autoplay=1&playsinline=1&rel=0');
-    $('.cry-player').addClass('is-visible');
-    announce("Playing Primeape's cry from YouTube.");
+    var audio = $('.cry-audio')[0];
+    var playback = audio.play();
+
+    if (playback && typeof playback.catch === "function") {
+      playback.then(function() {
+        announce("Primeape lets out a mighty cry!");
+      }).catch(function() {
+        announce("Primeape's cry could not be played. Try again.", true);
+      });
+    } else {
+      announce("Primeape lets out a mighty cry!");
+    }
   }
 
   function clickedNicknameForm(event) {
