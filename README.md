@@ -7,8 +7,9 @@ Primeape, give it a nickname, and listen to a short synthesized cry.
 
 [Open Primeape Pokepal](https://killerpigwolf.github.io/Daniel-Isayan-Project-2-CIT384-Pokemon/)
 
-The site is published with GitHub Pages. After the first push, allow the Pages
-deployment workflow to finish before sharing the link.
+GitHub Pages publishes the files from the root of the `main` branch. After a
+push, allow GitHub a few minutes to finish building the site before sharing the
+link.
 
 ## Controls
 
