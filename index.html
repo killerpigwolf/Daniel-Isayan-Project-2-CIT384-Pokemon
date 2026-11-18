@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Train and care for your own Primeape in Pokepal.">
+    <title>Primeape Pokepal</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
+            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+            crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="pet-card">
+      <header class="page-header">
+        <p class="eyebrow">KANTO TRAINER'S CLUB</p>
+        <h1>Primeape <span>Pokepal</span></h1>
+        <p class="intro">Keep your feisty Fighting-type strong, happy, and ready for its next challenge.</p>
+      </header>
+
+      <section class="pet-layout" aria-label="Primeape pet dashboard">
+        <div class="pet-image-container">
+          <div class="image-halo">
+            <img class="pet-image"
+                 src="images/057Primeape_OS_anime.jpeg"
+                 alt="Primeape, a small cream-colored Fighting-type Pokémon with raised fists">
+          </div>
+          <p class="pet-caption">Fighting type <span aria-hidden="true">•</span> #057</p>
+        </div>
+
+        <div class="dashboard">
+          <p class="eyebrow">YOUR PARTNER</p>
+          <h2 class="pet-name"><span class="name"></span></h2>
+          <p class="mood-line">Training mood: <strong class="mood">Ready to rumble!</strong></p>
+
+          <div class="stats" aria-label="Primeape's stats">
+            <div class="stat">
+              <span class="stat-label">Weight</span>
+              <strong><span class="weight"></span><span class="unit"> lbs</span></strong>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Happiness</span>
+              <strong><span class="happiness"></span><span class="unit"> / 100</span></strong>
+            </div>
+          </div>
+
+          <form class="nickname-form">
+            <label for="nickname">Give Primeape a nickname</label>
+            <div class="nickname-controls">
+              <input id="nickname" name="nickname" type="text" maxlength="20"
+                     placeholder="e.g. Fist Bump" autocomplete="off">
+              <button class="name-button" type="submit">Set name</button>
+            </div>
+          </form>
+
+          <div class="button-container" aria-label="Care actions">
+            <button class="treat-button action-button" type="button">
+              <span aria-hidden="true">🍓</span> Treat
+              <small>+happy · +weight</small>
+            </button>
+            <button class="play-button action-button" type="button">
+              <span aria-hidden="true">🥊</span> Play
+              <small>+happy · −weight</small>
+            </button>
+            <button class="exercise-button action-button" type="button">
+              <span aria-hidden="true">🏃</span> Train
+              <small>−weight · −happy</small>
+            </button>
+          </div>
+          <div class="sound-control">
+            <button class="cry-button" type="button">
+              <span aria-hidden="true">🔊</span> Hear Primeape's cry
+            </button>
+            <span class="sound-note">A short, synthesized growl</span>
+          </div>
+          <p class="status" role="status" aria-live="polite">Primeape is ready for action!</p>
+        </div>
+      </section>
+
+      <footer>
+        <span>Take good care of your partner, Trainer.</span>
+        <span class="pokeball" aria-hidden="true"></span>
+      </footer>
+    </main>
+  </body>
+</html>
